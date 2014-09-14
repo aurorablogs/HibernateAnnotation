@@ -27,6 +27,10 @@ public class MainTest
         Course course = new Course();
         //session = HibernatePersistence.getSessionFactory().openSession();
         course.setName(name);
+        session.beginTransaction();
+        Integer courseId = (Integer) session.save(course);
+        session.getTransaction().commit();
+        course = (Course) session.get(Course.class, courseId);
         System.out.println("Course Name is : "+course.getName());
         return course;
     }

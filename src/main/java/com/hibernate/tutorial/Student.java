@@ -11,7 +11,7 @@ import java.util.Set;
  */
 
 @Entity
-@Table(name = "course")
+@Table(name = "student")
 public class Student {
 
     private Integer id;
