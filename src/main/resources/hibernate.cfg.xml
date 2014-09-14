@@ -12,6 +12,7 @@
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sample_database</property>
     	<property name="show_sql">true</property>
     	
-        <mapping class="com.hibernate.tutorial.Product"></mapping>
+        <mapping class="com.hibernate.tutorial.Course"></mapping>
+        <mapping class="com.hibernate.tutorial.Student"></mapping>
     </session-factory>
 </hibernate-configuration>
