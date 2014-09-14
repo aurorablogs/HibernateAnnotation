@@ -13,5 +13,6 @@
     	<property name="show_sql">true</property>
     	
         <mapping class="com.hibernate.tutorial.Product"></mapping>
+        <mapping class="com.hibernate.tutorial.Category"></mapping>
     </session-factory>
 </hibernate-configuration>

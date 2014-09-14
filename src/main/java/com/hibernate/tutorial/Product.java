@@ -5,8 +5,11 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -27,6 +30,7 @@ public class Product implements Serializable {
     private String code;
     private String name;
     private BigDecimal price;
+    private Category category ;
     
     @Id
     @GenericGenerator(name="generator", strategy="increment")
@@ -63,10 +67,18 @@ public class Product implements Serializable {
 		this.price = price;
 	}
 	
+	@ManyToOne
+	@JoinColumn(name = "category_id", nullable = false)
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	@Override
-    public String toString() {
-        return "Product [id=" + id + ", code=" + code + ", name="
-                + name + ", price=" + price + "]";
-    } 
+	public String toString() {
+		return "Product [id=" + id + ", code=" + code + ", name=" + name
+				+ ", price=" + price + ", category=" + category + "]";
+	} 
     
 }
