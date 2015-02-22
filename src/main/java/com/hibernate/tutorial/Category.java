@@ -19,7 +19,6 @@ public class Category implements java.io.Serializable{
 
 	private Integer id;
     private String name;
-    private Set<Product> productDetails = new HashSet<Product>();
     
     @Id
     @GenericGenerator(name="generator", strategy="increment")
@@ -41,20 +40,10 @@ public class Category implements java.io.Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-
-    @OneToMany(mappedBy = "category")
-    public Set<Product> getProductDetails() {
-        return productDetails;
-    }
-
-    public void setProductDetails(Set<Product> productDetails) {
-        this.productDetails = productDetails;
-    }
-
+	
     @Override
 	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", productDetails="
-				+ productDetails + "]";
+		return "Category [id=" + id + ", name=" + name + "]";
 	}	
 	
 	
